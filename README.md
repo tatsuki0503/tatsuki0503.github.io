@@ -1,2 +1,2 @@
 # tatsuki0503.github.io
-ゴミカス
+web練習
