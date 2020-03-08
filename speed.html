@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="utf-8"content="width=device-width,initial-scale=1.0"/>
+	<meta charset="utf-8"/>
 	<title>ポケモン剣盾素早さ比較</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="chosen.css">
-	<link rel="stylesheet" media="(max-width: 640px)" href="style_mobile.css">
 	<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="chosen.jquery.js" type="text/javascript"></script>
 	<script src="init.js" type="text/javascript" charset="utf-8"></script>
@@ -860,13 +859,33 @@
 		</td>
 	</p>
 	<p>
-		<input type="text" name="努力値" placeholder="努力値入れて(0~252)"/>
-		<input type="text" style="margin-left: 107px;" name="努力値" placeholder="努力値入れて(0~252)"/>
+		<input type="text" id="effectNum1" style="margin-left: 2px;" name="努力値"
+			placeholder="努力値入れて(0~252)"/>
+		<input type="text" id="effectNum2" style="margin-left: 105px;" name="努力値"
+			placeholder="努力値入れて(0~252)"/>
+	</p>
+	<div style="display:inline-flex">
+		<form name="form1">
+			<label for="kotaichiId1">個体値：</label>
+			<input type="radio" id="kotaichiId1" name="k1" value="kotaichi1_31">31(v)
+			<input type="radio" id="kotaichiId1" name="k1" value="kotaichi1_0">0
+		</form>
+		<form name="form2">
+			<label for="kotaichiId2" style="margin-left: 83px;">個体値：</label>
+			<input type="radio" id="kotaichiId2" name="k2" value="kotaichi2_31">31(v)
+			<input type="radio" id="kotaichiId2" name="k2" value="kotaichi2_0">0
+		</form>
+	</div>
+	<p>
+		<input type="checkbox" id="hosei1" name="性格補正1" id="hosei1"
+
+			value="hoseiOn1">補正無効
+		<input type="checkbox" 
+			style="margin-left: 168px;" id="hosei2"
+			name="性格補正2" value="hoseiOn2">補正無効
 	</p>
 	<p>
 		<input type="button" value="比較" onclick="getCSV();" />
-	</p>
-	<p>
 	</p>
 </body>
 </html>
