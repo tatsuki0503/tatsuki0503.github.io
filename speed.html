@@ -877,12 +877,20 @@
 		</form>
 	</div>
 	<p>
-		<input type="checkbox" id="hosei1" name="性格補正1" id="hosei1"
-
-			value="hoseiOn1">補正無効
-		<input type="checkbox" 
-			style="margin-left: 168px;" id="hosei2"
-			name="性格補正2" value="hoseiOn2">補正無効
+		<div style="display:inline-flex">
+			<form name="seikakuH1">
+				<label for="hoseiIdId1">Rank：</label>
+				<input type="radio" id="hoseiIdId1" name="h1" value="hoseiUp">UP
+				<input type="radio" id="hoseiIdId1" name="h1" value="hoseiNomal">NML
+				<input type="radio" id="hoseiIdId1" name="h1" value="hoseiDown">DWN
+			</form>
+			<form name="seikakuH2">
+				<label for="hoseiIdId2" style="margin-left: 44px;">Rank：</label>
+				<input type="radio" id="hoseiIdId2" name="h2" value="hoseiUp">UP
+				<input type="radio" id="hoseiIdId2" name="h2" value="hoseiNomal">NML
+				<input type="radio" id="hoseiIdId2" name="h2" value="hoseiDown">DWN
+			</form>
+		</div>
 	</p>
 	<p>
 		<input type="button" value="比較" onclick="getCSV();" />

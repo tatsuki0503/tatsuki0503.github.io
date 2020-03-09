@@ -1,4 +1,11 @@
-const useNum = [2, 5, 10, 31, 30, 0];
+const useNum = [2, 5, 10, 31, 30, 0, 1.1, 0.9];
+
+// 連想配列定義
+const comphosei = {
+    hoseiUp: "up",
+    hoseiNomal: "nomal",
+    hoseiDown: "down"
+};
 
 //CSVファイル読み込み
 function getCSV(){
@@ -152,30 +159,108 @@ function speedCompCalc(speed, effectNum){
     }
 
     // 性格補正
-    var hosei1 = document.getElementById("hosei1");
-    var hosei2 = document.getElementById("hosei2");
+    var hosei1 = document.seikakuH1.h1;
+    var hosei2 = document.seikakuH2.h2;
 
-    // 補正判定
-    if(hosei1.checked == false){
-        resultOfCalc[0] =
-            parseInt((pokemon1Spd * useNum[0] + kNum1 + effectNum[0]) / useNum[0], 10) + useNum[1]; 
-
-        resultOfCalc[0] += parseInt(resultOfCalc[0] / useNum[2], 10);
-    } else{
-        resultOfCalc[0] =
-            parseInt((pokemon1Spd * useNum[0] + kNum1 + effectNum[0]) / useNum[0], 10) + useNum[1]; 
+    for(var i=0; i<hosei1.length;i++){
+        if(hosei1[i].checked){
+            var seikakuHosei1 = hosei1[i].value;
+        }
     }
 
-    if(hosei2.checked == false){
-        resultOfCalc[1] =
-            parseInt((pokemon2Spd * useNum[0] + kNum2 + effectNum[1]) / useNum[0], 10) + useNum[1];
+    for(var j=0; j<hosei2.length;j++){
+        if(hosei2[j].checked){
+            var seikakuHosei2 = hosei2[j].value;
+        }
+    }
 
-        resultOfCalc[1] += parseInt(resultOfCalc[1] / useNum[2], 10); 
+    // 補正判定
+    /*
+    var hoseiRN1 = compHosei(seikakuHosei1);
+    var hoseiRN2 = compHosei(seikakuHosei2);
+    */
+
+    var realOfHoseiNu1 = useNum[2];
+    var realOfHoseiNu2 = useNum[2];
+
+    /*
+    switch(hoseiRN1){
+        case "up":
+            realOfHoseiNu1 = useNum[6];
+            break;
+        case "nomal":
+            realOfHoseiNu1 = useNum[6];
+            break;
+        case "down":
+            realOfHoseiNum1 = useNum[7];
+            break;
+    }
+
+    switch(hoseiRN2){
+        case "up":
+            realOfHoseiNum2 = useNum[6];
+            break;
+        case "nomal":
+            realOfHoseiNum2 = useNum[6];
+            break;
+        case "down":
+            realOfHoseiNum2 = useNum[7];
+            break;
+    }
+    */
+
+    var hoseiChecked1 = document.getElementById("hoseiIdId1");
+    var hoseiChecked2 = document.getElementById("hoseiIdId2");
+    // 計算式判定・結果
+    if(Object.is(seikakuHosei1, "hoseiUp")){
+        resultOfCalc[0] =
+            parseInt((pokemon1Spd * useNum[0] + kNum1 + effectNum[0]) / useNum[0], 10) + useNum[1]; 
+
+        resultOfCalc[0] += parseInt(resultOfCalc[0] / realOfHoseiNu1, 10);
+    } else if(Object.is(seikakuHosei1, "hoseiNomal")){
+        resultOfCalc[0] =
+            parseInt((pokemon1Spd * useNum[0] + kNum1 + effectNum[0]) / useNum[0], 10) + useNum[1];
+    } else if(Object.is(seikakuHosei1, "hoseiDown")){
+        resultOfCalc[0] =
+            (parseInt((pokemon1Spd * useNum[0] + kNum1 + effectNum[0]) / useNum[0], 10) + useNum[1])* 0.9; 
+
+        resultOfCalc[0] = parseInt(resultOfCalc[0]);
     } else{
+
+    }
+
+    if(Object.is(seikakuHosei2, "hoseiUp")){
         resultOfCalc[1] =
             parseInt((pokemon2Spd * useNum[0] + kNum2 + effectNum[1]) / useNum[0], 10) + useNum[1]; 
+
+        resultOfCalc[1] += parseInt(resultOfCalc[1] / realOfHoseiNu2, 10);
+    } else if(Object.is(seikakuHosei2, "hoseiNomal")){
+        resultOfCalc[1] =
+            parseInt((pokemon2Spd * useNum[0] + kNum2 + effectNum[1]) / useNum[0], 10) + useNum[1];
+    } else if(Object.is(seikakuHosei2, "hoseiDown")){
+        resultOfCalc[1] =
+            (parseInt((pokemon2Spd * useNum[0] + kNum2 + effectNum[1]) / useNum[0], 10) + useNum[1]) * 0.9; 
+
+        resultOfCalc[1] = parseInt(resultOfCalc[1]);
+    } else{
+
     }
 
     // 結果の表示
     window.alert(resultOfCalc[0] + "," + resultOfCalc[1]);
+}
+
+function compHosei(hosei){
+
+    switch(hosei){
+        case "hoseiUp":
+            return comphosei["hoseiUp"];
+            break;
+        case "hoseiNomal":
+            return comphosei["hoseiNomal"];
+            break;
+        case "hoseiDown":
+            return comphosei["hoseiDown"];
+            break;
+    }
 }
