@@ -10,7 +10,7 @@ const comphosei = {
 //CSVファイル読み込み
 function getCSV(){
     var req = new XMLHttpRequest();
-    req.open("get", "sordAndSheeld.csv", true);
+    req.open("get", "https://github.com/tatsuki0503/tatsuki0503.github.io/tree/master/resourse/csv/sordAndSheeld.csv", true);
     req.send(null); // HTTPリクエストの発行
 
     req.onload = function(){
