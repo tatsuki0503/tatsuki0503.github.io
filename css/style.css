@@ -1,6 +1,6 @@
 table.calcArea1 {
-	width: 1000px;
-	min-width: 1000px;
+	width: 2000px;
+	min-width: 2000px;
 }
 
 table.calcArea1 th {
@@ -8,8 +8,8 @@ table.calcArea1 th {
 }
 
 table.inputEffectNum {
-	width: 1000px;
-	min-width: 1000px;
+	width: 2000px;
+	min-width: 2000px;
 }
 
 table.inputEffectNum td {
@@ -17,8 +17,8 @@ table.inputEffectNum td {
 }
 
 table.kotaichiNumSelect {
-	width: 1000px;
-	min-width: 1000px;
+	width: 2000px;
+	min-width: 2000px;
 }
 
 table.kotaichiNumSelect td {
@@ -26,8 +26,8 @@ table.kotaichiNumSelect td {
 }
 
 table.rankHoseiSelect {
-	width: 1000px;
-	min-width: 1000px;
+	width: 2000px;
+	min-width: 2000px;
 }
 
 table.rankHoseiSelect td {
@@ -54,4 +54,22 @@ table.compBtn td {
 
 #mnstBImg {
 	width: 1%;
+}
+
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+#menu-bg {
+background-color: #00FFFF; /*青色*/
+}
+}
+
+@media screen and (max-width: 767px) { /*ウィンドウ幅が最大767pxまでの場合に適用*/
+#menu-bg {
+background-color: #FF0000; /*赤色*/
+}
+}
+
+@media screen and (max-width: 540px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+#menu-bg {
+background-color: #00FF00; /*緑色*/
+}
 }
