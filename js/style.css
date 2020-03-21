@@ -1,0 +1,56 @@
+table.calcArea1 {
+	width: 1000px;
+	min-width: 1000px;
+}
+
+table.calcArea1 th {
+	width: 10%;
+}
+
+table.inputEffectNum {
+	width: 1000px;
+	min-width: 1000px;
+}
+
+table.inputEffectNum td {
+	width: 30%;
+}
+
+table.kotaichiNumSelect {
+	width: 1000px;
+	min-width: 1000px;
+}
+
+table.kotaichiNumSelect td {
+	width: 30%;
+}
+
+table.rankHoseiSelect {
+	width: 1000px;
+	min-width: 1000px;
+}
+
+table.rankHoseiSelect td {
+	width: 30%;
+}
+
+table.compBtn {
+	width: 500px;
+	min-width: 500px;
+}
+
+table.compBtn td {
+	padding-top: 2%
+}
+
+.selectPokemonStyle {
+	width: 30%;
+}
+
+.dropBxWidth {
+	width: 250px;
+}
+
+#mnstBImg {
+	width: 1%;
+}
